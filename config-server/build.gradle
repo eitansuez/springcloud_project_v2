@@ -14,7 +14,7 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 
-group = 'io.pivotal.training'
+group = 'io.pivotal.training.springcloud'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
 
@@ -22,26 +22,16 @@ repositories {
   mavenCentral()
 }
 
+
 ext {
   springCloudVersion = 'Edgware.SR2'
 }
 
 dependencies {
-  compile 'org.springframework.boot:spring-boot-starter-web'
-  compile 'org.springframework.boot:spring-boot-starter-actuator'
-  compile 'org.springframework.boot:spring-boot-starter-freemarker'
-
-  compile 'org.springframework.cloud:spring-cloud-starter-hystrix'
+  compile 'org.springframework.cloud:spring-cloud-config-server'
   compile 'org.springframework.cloud:spring-cloud-starter-eureka'
-  compile 'org.springframework.cloud:spring-cloud-starter-feign'
-  compile 'org.springframework.cloud:spring-cloud-starter-config'
-
-  runtime 'org.springframework.boot:spring-boot-devtools'
-
-  compileOnly 'org.projectlombok:lombok'
 
   testCompile 'org.springframework.boot:spring-boot-starter-test'
-  testCompile 'org.springframework.cloud:spring-cloud-starter-contract-stub-runner'
 }
 
 dependencyManagement {
@@ -49,4 +39,3 @@ dependencyManagement {
     mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
   }
 }
-
