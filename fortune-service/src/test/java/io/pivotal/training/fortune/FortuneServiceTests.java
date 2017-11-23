@@ -12,4 +12,10 @@ public class FortuneServiceTests {
     assertThat(fortuneService.getFortune()).isNotBlank();
   }
 
+  @Test
+  public void shouldReturnANonNullFortune() {
+    FortuneService fortuneService = new FortuneService();
+    assertThat(fortuneService.getFortune()).isNotNull();
+  }
+
 }
