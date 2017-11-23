@@ -32,6 +32,7 @@ dependencies {
   compile 'org.springframework.boot:spring-boot-starter-freemarker'
 
   compile 'org.springframework.cloud:spring-cloud-starter-hystrix'
+  compile 'org.springframework.cloud:spring-cloud-starter-eureka'
 
   runtime 'org.springframework.boot:spring-boot-devtools'
 
