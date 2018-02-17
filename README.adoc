@@ -1,0 +1,23 @@
+This repository is a version of https://github.com/eitansuez/springcloud_project, with updated Spring dependencies.
+
+- Spring Boot is updated to version 1.5.10
+- Spring Cloud Contract is updated to version 1.2.3
+- Spring Cloud Release Train is updated to Edgware.SR2
+- Spring Cloud Services is updated to v1.6.1.RELEASE
+
+Also, where possible, integration tests take advantage of Spring Boot's support for test slices (e.g. @WebMvcTEst).
+See https://spring.io/blog/2016/04/15/testing-improvements-in-spring-boot-1-4[this blog post^] for more information on that.
+
+The main gist of this repository is not as much the end product as it is the history of commits that demonstrate how the end product is arrived at.
+
+The starting point (tag `01-start`) is a simple Spring Boot application.  The application is initially refactored into two separate applications.  Next we add integration tests, and use Wiremock to generate a stub for testing one service in the absence of the other.  The system is progressively enhanced to take advantage of Spring Cloud libraries:
+
+- Contracts
+- Hystrix
+- Eureka
+- Ribbon
+- Feign
+- Config Server
+
+The last commit updates the projects for deployment to Pivotal Cloud Foundry, using the Spring Cloud Services tile.
+
